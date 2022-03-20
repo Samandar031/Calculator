@@ -126,6 +126,18 @@ btnBarobar.addEventListener("click", () => {
     let ayir2 = +ayir[1];
     let ayirnatija = ayir1 - ayir2;
     input.value = ayirnatija;
+  } else if (tekshirish.includes("x")) {
+    let kopay = input.value.split("x");
+    let kopay1 = +kopay[0];
+    let kopay2 = +kopay[1];
+    let kopaynatija = kopay1 * kopay2;
+    input.value = kopaynatija;
+  } else if (tekshirish.includes("/")) {
+    let bol = input.value.split("/");
+    let bol1 = +bol[0];
+    let bol2 = +bol[1];
+    let bolnatija = bol1 * bol2;
+    input.value = bolnatija;
   }
   // natija = Number(birinchiSon.join("")) * Number(ikkinchiSon.join(""));
   // input.value = natija;
