@@ -121,11 +121,11 @@ btnBarobar.addEventListener("click", () => {
     let qoshnatija = qosh1 + qosh2;
     input.value = qoshnatija;
   } else if (tekshirish.includes("-")) {
-    let qosh = input.value.split("-");
-    let qosh1 = +qosh[0];
-    let qosh2 = +qosh[1];
-    let qoshnatija = qosh1 - qosh2;
-    input.value = qoshnatija;
+    let ayir = input.value.split("-");
+    let ayir1 = +ayir[0];
+    let ayir2 = +ayir[1];
+    let ayirnatija = ayir1 - ayir2;
+    input.value = ayirnatija;
   }
   // natija = Number(birinchiSon.join("")) * Number(ikkinchiSon.join(""));
   // input.value = natija;
