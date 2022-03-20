@@ -24,100 +24,111 @@ let btnPoint = document.querySelector(".btn-point");
 let btnBarobar = document.querySelector(".btn-bar");
 
 let birinchiSon = [];
-let ikkinchiSon = [];
-// birinchi va ikkinchi sonlar
-let bir = Number(birinchiSon.join(""));
-let ikki = Number(ikkinchiSon.join(""));
 
-one.addEventListener("click", function (bir) {
+function sum() {
+  let inputNumber = birinchiSon.join("");
+  input.value = inputNumber;
+}
+
+one.addEventListener("click", () => {
   birinchiSon.push(1);
-  input.value = birinchiSon.join("");
-  ikkinchiSon.push(1);
+  sum();
 });
 
-two.addEventListener("click", function (bir) {
+two.addEventListener("click", () => {
   birinchiSon.push(2);
-  input.value = birinchiSon.join("");
-  ikkinchiSon.push(2);
+  sum();
 });
 
-three.addEventListener("click", function (bir) {
+three.addEventListener("click", () => {
   birinchiSon.push(3);
-  input.value = birinchiSon.join("");
-  ikkinchiSon.push(3);
+  sum();
 });
 
-four.addEventListener("click", function (bir) {
+four.addEventListener("click", () => {
   birinchiSon.push(4);
-  input.value = birinchiSon.join("");
-  ikkinchiSon.push(4);
+  sum();
 });
 
-five.addEventListener("click", function (bir) {
+five.addEventListener("click", () => {
   birinchiSon.push(5);
-  input.value = birinchiSon.join("");
-  ikkinchiSon.push(5);
+  sum();
 });
 
-six.addEventListener("click", function (bir) {
+six.addEventListener("click", () => {
   birinchiSon.push(6);
-  input.value = birinchiSon.join("");
-  ikkinchiSon.push(6);
+  sum();
 });
 
-seven.addEventListener("click", function (bir) {
+seven.addEventListener("click", () => {
   birinchiSon.push(7);
-  input.value = birinchiSon.join("");
-  ikkinchiSon.push(7);
+  sum();
 });
 
-eight.addEventListener("click", function (bir) {
+eight.addEventListener("click", () => {
   birinchiSon.push(8);
-  input.value = birinchiSon.join("");
-  ikkinchiSon.push(8);
+  sum();
 });
 
-nine.addEventListener("click", function (bir) {
+nine.addEventListener("click", () => {
   birinchiSon.push(9);
-  input.value = birinchiSon.join("");
+  sum();
 });
 
-nol.addEventListener("click", function (bir) {
+nol.addEventListener("click", () => {
   birinchiSon.push(0);
-  input.value = birinchiSon.join("");
-  ikkinchiSon.push(0);
+  sum();
 });
 
-btnPoint.addEventListener("click", function () {
+btnPoint.addEventListener("click", () => {
   birinchiSon.push(".");
-  input.value = birinchiSon.join("");
+  sum();
+});
+
+btnPlus.addEventListener("click", () => {
+  birinchiSon.push("+");
+  sum();
 });
 
 // btn clear
-btnClear.addEventListener("click", function () {
+btnClear.addEventListener("click", () => {
   input.value = 0;
   birinchiSon = [];
   ikkinchiSon = [];
 });
 
 // btn ko'paytirish
-btnKopaytirish.addEventListener("click", function () {
-  birinchiSon.push(" x ");
-  input.value = birinchiSon.join("");
-  for (let i = 0; i < birinchiSon.length; i++) {
-    if (birinchiSon[i] == " x ") {
-      for (let j = i; j < birinchiSon.length - i; j++) {
-        ikkinchiSon.push(birinchiSon[j + 1]);
-      }
-    }
-  }
-});
+// btnKopaytirish.addEventListener("click", () => {
+//   birinchiSon.push(" x ");
+//   input.value = birinchiSon.join("");
+//   for (let i = 0; i < birinchiSon.length; i++) {
+//     if (birinchiSon[i] == " x ") {
+//       for (let j = i; j < birinchiSon.length - i; j++) {
+//         ikkinchiSon.push(birinchiSon[j + 1]);
+//       }
+//     }
+//   }
+// });
 
 // btn barobar
 let natija;
-btnBarobar.addEventListener("click", function () {
-  natija = Number(birinchiSon.join("")) * Number(ikkinchiSon.join(""));
-  input.value = natija;
+btnBarobar.addEventListener("click", () => {
+  let tekshirish = input.value.split("");
+  if (tekshirish.includes("+")) {
+    let qosh = input.value.split("+");
+    let qosh1 = +qosh[0];
+    let qosh2 = +qosh[1];
+    let qoshnatija = qosh1 + qosh2;
+    input.value = qoshnatija;
+  } else if (tekshirish.includes("-")) {
+    let qosh = input.value.split("-");
+    let qosh1 = +qosh[0];
+    let qosh2 = +qosh[1];
+    let qoshnatija = qosh1 - qosh2;
+    input.value = qoshnatija;
+  }
+  // natija = Number(birinchiSon.join("")) * Number(ikkinchiSon.join(""));
+  // input.value = natija;
 });
 
 // btn protsent
@@ -125,25 +136,3 @@ btnProsent.addEventListener("click", function () {
   let protsent = Number(birinchiSon.join("")) / 100;
   input.value = protsent;
 });
-
-// ko'paytirish
-let kop = [];
-let kopaytirish = Number(kop.join(""));
-
-// bo'lish
-let bol = [];
-let bolish = Number(bol.join(""));
-
-// qo'shish
-let qosh = [];
-let qoshish = Number(qosh.join(""));
-
-// ayirish
-let ay = [];
-let ayirish = Number(ay.join(""));
-
-console.log(ikkinchiSon);
-console.log(birinchiSon);
-console.log(bir);
-console.log(ikki);
-console.log(natija);
