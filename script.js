@@ -90,6 +90,21 @@ btnPlus.addEventListener("click", () => {
   sum();
 });
 
+btnBulish.addEventListener("click", () => {
+  birinchiSon.push("/");
+  sum();
+});
+
+btnMinus.addEventListener("click", () => {
+  birinchiSon.push("--");
+  sum();
+});
+
+btnKopaytirish.addEventListener("click", () => {
+  birinchiSon.push("x");
+  sum();
+});
+
 // btn clear
 btnClear.addEventListener("click", () => {
   input.value = 0;
@@ -111,40 +126,71 @@ btnClear.addEventListener("click", () => {
 // });
 
 // btn barobar
-let natija;
-btnBarobar.addEventListener("click", () => {
-  let tekshirish = input.value.split("");
-  if (tekshirish.includes("+")) {
-    let qosh = input.value.split("+");
-    let qosh1 = +qosh[0];
-    let qosh2 = +qosh[1];
-    let qoshnatija = qosh1 + qosh2;
-    input.value = qoshnatija;
-  } else if (tekshirish.includes("-")) {
-    let ayir = input.value.split("-");
-    let ayir1 = +ayir[0];
-    let ayir2 = +ayir[1];
-    let ayirnatija = ayir1 - ayir2;
-    input.value = ayirnatija;
-  } else if (tekshirish.includes("x")) {
-    let kopay = input.value.split("x");
-    let kopay1 = +kopay[0];
-    let kopay2 = +kopay[1];
-    let kopaynatija = kopay1 * kopay2;
-    input.value = kopaynatija;
-  } else if (tekshirish.includes("/")) {
-    let bol = input.value.split("/");
-    let bol1 = +bol[0];
-    let bol2 = +bol[1];
-    let bolnatija = bol1 * bol2;
-    input.value = bolnatija;
-  }
-  // natija = Number(birinchiSon.join("")) * Number(ikkinchiSon.join(""));
-  // input.value = natija;
-});
+
+// btnBarobar.addEventListener("click", () => {
+//   let tekshirish = input.value.split("");
+//   if (tekshirish.includes("+")) {
+//     let qosh = input.value.split("+");
+//     let qosh1 = +qosh[0];
+//     let qosh2 = +qosh[1];
+//     let qoshnatija = qosh1 + qosh2;
+//     input.value = qoshnatija;
+//     console.log(qosh);
+//   } else if (tekshirish.includes("-")) {
+//     let ayir = input.value.split("-");
+//     let ayir1 = +ayir[0];
+//     let ayir2 = +ayir[1];
+//     let ayirnatija = ayir1 - ayir2;
+//     input.value = ayirnatija;
+//   } else if (tekshirish.includes("x")) {
+//     let kopay = input.value.split("x");
+//     let kopay1 = +kopay[0];
+//     let kopay2 = +kopay[1];
+//     let kopaynatija = kopay1 * kopay2;
+//     input.value = kopaynatija;
+//   } else if (tekshirish.includes("/")) {
+//     let bol = input.value.split("/");
+//     let bol1 = +bol[0];
+//     let bol2 = +bol[1];
+//     let bolnatija = bol1 * bol2;
+//     input.value = bolnatija;
+//   }
+// natija = Number(birinchiSon.join("")) * Number(ikkinchiSon.join(""));
+// input.value = natija;
+// });
 
 // btn protsent
-btnProsent.addEventListener("click", function () {
-  let protsent = Number(birinchiSon.join("")) / 100;
-  input.value = protsent;
+// btnProsent.addEventListener("click", function () {
+//   let protsent = Number(birinchiSon.join("")) / 100;
+//   input.value = protsent;
+// });
+
+let natija;
+btnBarobar.addEventListener("click", function () {
+  let tekshirish = input.value.split("");
+  if (tekshirish.includes("+")) {
+    let join = input.value.split("+");
+    let bir = +join[0];
+    let ikki = +join[1];
+    let qosh = bir + ikki;
+    input.value = qosh;
+  } else if (tekshirish.includes("x")) {
+    let join = input.value.split("x");
+    let bir = +join[0];
+    let ikki = +join[1];
+    let qosh = bir * ikki;
+    input.value = qosh;
+  } else if (tekshirish.includes("/")) {
+    let join = input.value.split("/");
+    let bir = +join[0];
+    let ikki = +join[1];
+    let qosh = bir / ikki;
+    input.value = qosh;
+  } else if (tekshirish.includes("--")) {
+    let join = input.value.split("--");
+    let bir = +join[0];
+    let ikki = +join[1];
+    let qosh = bir - ikki;
+    input.value = qosh;
+  }
 });
