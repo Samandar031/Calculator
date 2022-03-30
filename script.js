@@ -164,7 +164,7 @@ btnClear.addEventListener("click", () => {
 //   let protsent = Number(birinchiSon.join("")) / 100;
 //   input.value = protsent;
 // });
-
+g
 let natija;
 btnBarobar.addEventListener("click", function () {
   let tekshirish = input.value.split("");
@@ -181,16 +181,16 @@ btnBarobar.addEventListener("click", function () {
     let qosh = bir * ikki;
     input.value = qosh;
   } else if (tekshirish.includes("/")) {
-    let join = input.value.split("/");
-    let bir = +join[0];
-    let ikki = +join[1];
-    let qosh = bir / ikki;
-    input.value = qosh;
-  } else if (tekshirish.includes("--")) {
-    let join = input.value.split("--");
-    let bir = +join[0];
-    let ikki = +join[1];
-    let qosh = bir - ikki;
-    input.value = qosh;
-  }
+  //   let join = input.value.split("/");
+  //   let bir = +join[0];
+  //   let ikki = +join[1];
+  //   let qosh = bir / ikki;
+  //   input.value = qosh;
+  // // } else if (tekshirish.includes("--")) {
+  //   let join = input.value.split("--");
+  //   let bir = +join[0];
+  //   let ikki = +join[1];
+  //   let qosh = bir - ikki;
+  //   input.value = qosh;
+  // }
 });
